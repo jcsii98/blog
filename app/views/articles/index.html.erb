@@ -1,0 +1,14 @@
+
+
+  
+    <div class="ff-primary mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold font-inherit tracking-tight text-gray-900 sm:text-4xl">All Articles</h2>
+       <p class="font-inherit mt-2 text-lg leading-8 text-gray-600"><%= link_to 'New Article', new_article_path %></p>
+    </div>
+    <div class="py-10 mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 border-t border-gray-200 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <% @articles.each do |article| %>
+      <%= render 'article', article: article %>
+      <% end %>
+    </div>
+
+

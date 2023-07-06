@@ -1,0 +1,51 @@
+/* application.tailwind.css */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional customizations or styles if needed */
+.bg-primary {
+    background-color: #22333B;
+}
+.bg-secondary {
+    background-color: #EAE0D5,
+}
+.bg-tertiary {
+    background-color: #0A0908,
+}
+
+
+.text-primary {
+  color: #22333B;
+}
+.text-secondary {
+    color: #EAE0D5,
+}
+.text-tertiary {
+    color: #0A0908,
+}
+
+.ff-primary {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ff-secondary {
+  font-family: 'Merriweather', sans-serif;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-700 {
+    font-weight: 700;
+}
+.font-inherit {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}

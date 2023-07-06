@@ -1,0 +1,20 @@
+<%= form_with(model: article, url: url, local: true) do |f| %>
+  <div class="py-2">
+    <%= f.label :name, class: 'fw-400 ff-primary py-1 text-1xl tracking-tight text-primary sm:text-2xl' %><br>
+    <%= f.text_field :name, class: 'block w-full rounded-md border-0 py-1.5 px-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
+  </div>
+  <div class="py-2">
+    <%= f.label :title, class: 'fw-400 ff-primary py-1 text-1xl tracking-tight text-gray-900 sm:text-2xl' %><br>
+    <%= f.text_field :title, class: 'block w-full rounded-md border-0 py-1.5 px-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
+  </div>
+  <div class="py-2">
+    <%= f.label :body, class: 'fw-400 ff-primary py-1 text-1xl tracking-tight text-gray-900 sm:text-2xl' %><br>
+    <%= f.text_area :body, class: 'block w-full rounded-md border-0 py-1.5 px-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6', rows: '3' %>
+  </div>
+
+  <div class="py-2">
+    <%= link_to 'Cancel', '/articles', class: 'fw-400 ff-primary' %>
+    <%= f.submit 'Submit', class: 'fw-400 ff-primary' %>
+  </div>
+<% end %>
+

@@ -1,0 +1,8 @@
+<div>
+  <div class="relative mt-2 rounded-md p-2 shadow-sm">
+    <div class="mx-auto lg:mx-0">
+      <h2 class="py-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">Edit Article</h2>
+    </div>
+    <%= render 'form', article: @article, url: update_article_path(@article) %>
+  </div>
+</div>

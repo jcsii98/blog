@@ -1,0 +1,32 @@
+<article class="flex max-w-xl flex-col items-start justify-between shadow p-2 rounded-sm">
+  <div class="flex items-center gap-x-4 text-xs">
+    <time datetime="2020-03-16" class="text-gray-500">Date</time>
+    <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Category</a>
+  </div>
+<div class="group relative" style="width: 100%; height: 100%;"><div style="width: 100%; height: 50px;">
+  <h3 class="ff-primary mt-3 text-lg fw-700 leading-6 text-gray-900 group-hover:text-gray-600">
+  <% truncated_title = truncate(article.title, length: 60, omission: '...') %>
+    <%= link_to truncated_title, show_article_path(article.id) %>
+  </h3>
+  </div>
+  <div class="ff-secondary mt-3 text-sm leading-6 text-gray-600" style="width: 100%; height: 100%; overflow: hidden; display: -webkit-box;  -webkit-box-orient: vertical;">
+    <%= truncate(article.body, length: 250, omission: '...') %>
+
+  </div>
+</div>
+  <div class="relative mt-3 flex items-center gap-x-4">
+    <img src="<%= image_path('profile.png') %>" alt="Profile" class="h-10 w-10 rounded-full bg-gray-50">
+
+    <div class="text-sm leading-6">
+      <p class="font-semibold text-gray-900">
+        <a href="#">
+          <span class="absolute inset-0"></span>
+          <%= article.name %>
+        </a>
+      </p>
+    </div>
+  </div>
+</article>
+
+
+

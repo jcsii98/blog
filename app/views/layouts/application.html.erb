@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog1</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <%= stylesheet_link_tag 'application.css', media: 'all' %>
+  <%= stylesheet_link_tag 'application.tailwind.css', media: 'all' %>
+</head>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
 
   <body>
+  <div class="min-h-screen bg-primary py-16 sm:py-22">
+  <div class="rounded bg-white mx-auto max-w-7xl pt-8 px-6 lg:px-8">
     <%= yield %>
+    </div>
+  </div>
+  
   </body>
 </html>
