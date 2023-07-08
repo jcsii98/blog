@@ -1,11 +1,11 @@
-<div class="bg-white py-16 sm:py-20">
+<div class="bg-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="ff-primary mx-auto max-w-2xl lg:mx-0">
       <h2 class="font-inherit text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><%= @article.title %></h2>
       <p class="font-inherit mt-2 text-lg leading-8 text-gray-600"><%= @article.name %></p>
     </div>
     <div class="ff-secondary py-6 mt-6 border-t border-gray-200 prose">
-      <%= @article.body.html_safe %>
+      <p class="leading-loose"><%= @article.body.html_safe %></p>
     </div>
     <div class="mx-auto max-w-2xl lg:mx-0">
         <%= link_to 'Edit', edit_article_path(@article), class: 'fw-400 ff-primary' %>

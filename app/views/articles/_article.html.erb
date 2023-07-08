@@ -1,6 +1,7 @@
-<article class="flex max-w-xl flex-col items-start justify-between shadow p-2 rounded-sm">
+<article class="flex max-w-xl flex-col items-start justify-between shadow p-4 rounded-sm">
   <div class="flex items-center gap-x-4 text-xs">
-    <time datetime="2020-03-16" class="text-gray-500">Date</time>
+<time datetime="<%= article.created_at.strftime('%Y-%m-%d') %>" class="text-gray-500"><%= article.created_at.strftime('%B %d, %Y') %></time>
+
     <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Category</a>
   </div>
 <div class="group relative" style="width: 100%; height: 100%;"><div style="width: 100%; height: 50px;">
@@ -14,7 +15,7 @@
 
   </div>
 </div>
-  <div class="relative mt-3 flex items-center gap-x-4">
+  <div class="relative mt-2 flex items-center gap-x-4">
     <img src="<%= image_path('profile.png') %>" alt="Profile" class="h-10 w-10 rounded-full bg-gray-50">
 
     <div class="text-sm leading-6">
