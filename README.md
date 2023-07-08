@@ -22,5 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 
-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
 * ...
