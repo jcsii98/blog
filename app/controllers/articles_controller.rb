@@ -1,16 +1,14 @@
 class ArticlesController < ApplicationController
-    
-    def test
-        puts 'Test route called!'
-    end
-
 
     def index
         @articles = Article.all
+
+        render :index
     end
 
     def show
         @article = Article.find(params[:id])
+        @comment = @article.comments.build # Comment.new(article_id: @article.id)
     end
 
 
@@ -43,7 +41,7 @@ class ArticlesController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         @article = Article.find(params[:id])
         @article.destroy
         redirect_to articles_path

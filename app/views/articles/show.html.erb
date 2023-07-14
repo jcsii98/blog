@@ -2,15 +2,43 @@
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="ff-primary mx-auto max-w-2xl lg:mx-0">
       <h2 class="font-inherit text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><%= @article.title %></h2>
-      <p class="font-inherit mt-2 text-lg leading-8 text-gray-600"><%= @article.name %></p>
+      <p class="font-inherit mt-2 text-lg leading-8 text-gray-600">
+        <%= @article.name %>
+      </p>
+      <div class="ff-secondary py-6 mt-6 border-t border-gray-200 prose">
+        <p class="leading-loose">
+          <%= @article.body.html_safe %>
+        </p>
+      </div>
+      <div class="ff-primary py-6 mt-6 border-t border-gray-200 prose">
+        <h2 class="font-inherit text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">Comments</h2>
+        <p class="text-lg text-slate-500 mt-2">
+          Write a comment
+        </p>
+        <%= form_with url: article_comments_path(@article.id), local: true do |f| %>
+          <%= f.text_area :body, class: 'block w-full rounded-md border-0 py-1.5 px-3 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6' %>
+          <%= f.submit %>
+        <% end %>
+
+        <p class="ff-secondary mt-8 leading-loose">
+          <% @article.comments.each do |comment| %>
+            <% if comment.persisted? %>
+              <p>
+                <%= comment.body %>
+              </p>
+              <p class="text-sm text-slate-300">
+                <%= comment.created_at.strftime("%b %d, %y") %>
+              </p>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
     </div>
-    <div class="ff-secondary py-6 mt-6 border-t border-gray-200 prose">
-      <p class="leading-loose"><%= @article.body.html_safe %></p>
-    </div>
+    
     <div class="mx-auto max-w-2xl lg:mx-0">
-        <%= link_to 'Edit', edit_article_path(@article), class: 'fw-400 ff-primary' %>
-        <%= link_to 'Go Back', articles_path, class: 'fw-400 ff-primary' %>
-        <%= button_to 'Delete', delete_article_path(@article), method: :delete, class: 'fw-400 ff-primary'%>
+      <%= link_to 'Edit', edit_article_path(@article), class: 'fw-400 ff-primary' %>
+      <%= link_to 'Go Back', articles_path, class: 'fw-400 ff-primary' %>
+      <%= button_to 'Delete', article_path(@article), method: :delete, class: 'fw-400 ff-primary' %>
     </div>
   </div>
 </div>
